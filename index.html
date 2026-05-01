@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubre los mejores géneros musicales: Jazz, Rock, Indie Pop, R&B, Salsa y Flamenco." />
+  <title>SoundScape – Géneros Musicales</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@400;500;600&family=Space+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body data-page="home">
+
+  <!-- Partículas -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- ── HEADER ─────────────────────────── -->
+  <header class="site-header" role="banner">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">Sound<span>Scape</span></a>
+
+      <nav id="nav-menu" class="nav-menu" role="navigation" aria-label="Menú principal">
+        <a href="index.html"      class="nav-link">Inicio</a>
+        <a href="jazz.html"       class="nav-link">Jazz</a>
+        <a href="rock.html"       class="nav-link">Rock</a>
+        <a href="indie-pop.html"  class="nav-link">Indie Pop</a>
+        <a href="rnb.html"        class="nav-link">R&amp;B</a>
+        <a href="salsa.html"      class="nav-link">Salsa</a>
+        <a href="flamenco.html"   class="nav-link">Flamenco</a>
+      </nav>
+
+      <div class="nav-controls">
+        <button id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">☀️</button>
+        <button id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── HERO ───────────────────────────── -->
+  <section class="hero" aria-label="Bienvenida">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="hero-tag">🎶 Plataforma Musical</span>
+
+      <h1 class="hero-title">
+        Explora el universo<br>
+        de la <em>música</em>
+      </h1>
+
+      <p class="hero-subtitle">
+        Descubre canciones icónicas, artistas legendarios y la historia
+        detrás de cada género musical que ha marcado nuestra cultura.
+      </p>
+
+      <!-- Buscador (Last.fm API) -->
+      <form id="search-form" class="search-bar" role="search" aria-label="Buscar canciones">
+        <input
+          id="search-input"
+          type="search"
+          placeholder="Busca una canción o artista…"
+          autocomplete="off"
+          aria-label="Término de búsqueda"
+        />
+        <button type="submit" class="btn-primary">Buscar</button>
+      </form>
+
+      <div id="search-results" aria-live="polite" aria-label="Resultados de búsqueda"></div>
+    </div>
+  </section>
+
+  <!-- ── GÉNEROS ─────────────────────────── -->
+  <section class="section" id="generos" aria-labelledby="generos-title">
+    <div class="section-header">
+      <span class="section-label">Colección</span>
+      <h2 class="section-title" id="generos-title">Elige tu género</h2>
+    </div>
+
+    <div class="genre-grid container-fluid px-0">
+
+      <!-- Jazz -->
+      <a href="jazz.html" class="genre-card reveal"
+         style="--card-color:#F5A623; --card-gradient:linear-gradient(135deg,#F5A623,#e07b00);"
+         aria-label="Ir a la sección de Jazz">
+        <div class="card-icon" style="color:#fff; background-color:#F5A623;">🎷</div>
+        <h3 class="card-name">Jazz</h3>
+        <p class="card-desc">Improvisación, swing y soul. Desde Sinatra hasta Miles Davis.</p>
+        <span class="card-arrow">Explorar →</span>
+      </a>
+
+      <!-- Rock -->
+      <a href="rock.html" class="genre-card reveal"
+         style="--card-color:#E63946; --card-gradient:linear-gradient(135deg,#E63946,#9c0000);"
+         aria-label="Ir a la sección de Rock">
+        <div class="card-icon" style="color:#fff; background-color:#E63946;">🎸</div>
+        <h3 class="card-name">Rock</h3>
+        <p class="card-desc">Guitarras eléctricas, rebelión y anthems eternos.</p>
+        <span class="card-arrow">Explorar →</span>
+      </a>
+
+      <!-- Indie Pop -->
+      <a href="indie-pop.html" class="genre-card reveal"
+         style="--card-color:#B57BEE; --card-gradient:linear-gradient(135deg,#B57BEE,#5a00b0);"
+         aria-label="Ir a la sección de Indie Pop">
+        <div class="card-icon" style="color:#fff; background-color:#B57BEE;">🎵</div>
+        <h3 class="card-name">Indie Pop</h3>
+        <p class="card-desc">Melodías íntimas, letras poéticas y producción independiente.</p>
+        <span class="card-arrow">Explorar →</span>
+      </a>
+
+      <!-- R&B -->
+      <a href="rnb.html" class="genre-card reveal"
+         style="--card-color:#00B4D8; --card-gradient:linear-gradient(135deg,#00B4D8,#0077a0);"
+         aria-label="Ir a la sección de R&B">
+        <div class="card-icon" style="color:#fff; background-color:#00B4D8;">🎤</div>
+        <h3 class="card-name">R&amp;B</h3>
+        <p class="card-desc">Rhythm &amp; Blues, hip-hop y el alma del street sound.</p>
+        <span class="card-arrow">Explorar →</span>
+      </a>
+
+      <!-- Salsa -->
+      <a href="salsa.html" class="genre-card reveal"
+         style="--card-color:#F4D03F; --card-gradient:linear-gradient(135deg,#F4D03F,#c09000);"
+         aria-label="Ir a la sección de Salsa">
+        <div class="card-icon" style="color:#080c10; background-color:#F4D03F;">💃</div>
+        <h3 class="card-name">Salsa</h3>
+        <p class="card-desc">Ritmo caribeño, clavé y cadencia que te mueve el cuerpo.</p>
+        <span class="card-arrow">Explorar →</span>
+      </a>
+
+      <!-- Flamenco -->
+      <a href="flamenco.html" class="genre-card reveal"
+         style="--card-color:#FF6B35; --card-gradient:linear-gradient(135deg,#FF6B35,#c03000);"
+         aria-label="Ir a la sección de Flamenco">
+        <div class="card-icon" style="color:#fff; background-color:#FF6B35;">🌹</div>
+        <h3 class="card-name">Flamenco</h3>
+        <p class="card-desc">Duende, pasión y raíces andaluzas. Arte declarado Patrimonio UNESCO.</p>
+        <span class="card-arrow">Explorar →</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ──────────────────────────── -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="footer-logo">SoundScape</span>
+      <nav class="footer-links" aria-label="Navegación de pie de página">
+        <a href="index.html">Inicio</a>
+        <a href="jazz.html">Jazz</a>
+        <a href="rock.html">Rock</a>
+        <a href="indie-pop.html">Indie Pop</a>
+        <a href="rnb.html">R&amp;B</a>
+        <a href="salsa.html">Salsa</a>
+        <a href="flamenco.html">Flamenco</a>
+      </nav>
+      <p class="footer-copy">
+        &copy; 2025 SoundScape · Proyecto Universitario · Datos vía
+        <a href="https://www.last.fm/api" target="_blank" rel="noopener" style="color:var(--accent)">Last.fm API</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
