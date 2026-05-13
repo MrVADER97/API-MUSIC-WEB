@@ -1,0 +1,108 @@
+/* ================================================================
+   SONIDO · Temas por género
+   Aplicar .theme-<id> al <body> de cada página de género
+   o a una sección concreta de la landing.
+   ================================================================ */
+
+/* HIP HOP */
+.theme-hiphop {
+  background-color: hsl(var(--hiphop-bg));
+  background-image:
+    linear-gradient(180deg, hsl(var(--hiphop-1) / .18) 0%, hsl(var(--hiphop-2) / .12) 100%),
+    radial-gradient(circle at 20% 25%, hsl(var(--hiphop-1) / .28), transparent 45%),
+    radial-gradient(circle at 80% 75%, hsl(0 80% 40% / .26), transparent 50%),
+    repeating-linear-gradient(45deg, hsl(0 0% 100% / .035) 0 2px, transparent 2px 14px);
+  background-attachment: fixed;
+}
+.theme-hiphop .accent { color: hsl(var(--hiphop-1)); }
+.theme-hiphop .gradient-text {
+  background: var(--gradient-hiphop);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.tag-stroke {
+  -webkit-text-stroke: 2px hsl(0 0% 100%);
+  color: hsl(var(--hiphop-1) / .25);
+  text-shadow: 6px 6px 0 hsl(0 0% 0% / .55);
+}
+
+/* JAZZ */
+.theme-jazz {
+  background-color: hsl(var(--jazz-bg));
+  background-image:
+    linear-gradient(180deg, hsl(var(--jazz-1) / .16) 0%, hsl(var(--jazz-2) / .14) 100%),
+    radial-gradient(ellipse at top, hsl(var(--jazz-1) / .28), transparent 55%),
+    radial-gradient(ellipse at 80% 90%, hsl(280 70% 40% / .30), transparent 50%);
+  background-attachment: fixed;
+}
+.theme-jazz .accent { color: hsl(var(--jazz-1)); }
+.theme-jazz .gradient-text {
+  background: var(--gradient-jazz);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.deco-frame {
+  border: 1px solid hsl(var(--jazz-1) / .6);
+  box-shadow: inset 0 0 0 4px hsl(var(--jazz-bg)),
+              inset 0 0 0 5px hsl(var(--jazz-1) / .4);
+}
+
+/* FLAMENCO */
+.theme-flamenco {
+  background-color: hsl(var(--flamenco-bg));
+  background-image:
+    linear-gradient(180deg, hsl(34 55% 76% / .22) 0%, hsl(28 50% 65% / .12) 100%),
+    radial-gradient(circle at 20% 30%, hsl(var(--flamenco-2) / .26), transparent 40%),
+    radial-gradient(circle at 80% 80%, hsl(var(--flamenco-1) / .32), transparent 45%),
+    radial-gradient(hsl(36 50% 85% / .10) 1px, transparent 1.5px);
+  background-size: auto, auto, auto, 28px 28px;
+  background-attachment: fixed;
+}
+.theme-flamenco .accent { color: hsl(var(--flamenco-1)); }
+.theme-flamenco .gradient-text {
+  background: var(--gradient-flamenco);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* POP */
+.theme-pop {
+  background-color: hsl(var(--pop-bg));
+  background-image:
+    linear-gradient(180deg, hsl(36 55% 80% / .18) 0%, hsl(36 45% 70% / .10) 100%),
+    radial-gradient(circle at 0% 0%, hsl(var(--pop-1) / .30), transparent 50%),
+    radial-gradient(circle at 100% 100%, hsl(var(--pop-2) / .30), transparent 50%),
+    radial-gradient(hsl(var(--pop-1) / .16) 1.5px, transparent 2px);
+  background-size: auto, auto, auto, 14px 14px;
+  background-attachment: fixed;
+}
+.theme-pop .accent { color: hsl(var(--pop-1)); }
+.theme-pop .gradient-text {
+  background: var(--gradient-pop);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.chrome-text {
+  background: linear-gradient(180deg,
+    hsl(var(--pop-2)) 0%, hsl(40 30% 96%) 45%,
+    hsl(var(--pop-1)) 55%, hsl(280 90% 65%) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ROCK */
+.theme-rock {
+  background-color: hsl(var(--rock-bg));
+  background-image:
+    linear-gradient(180deg, hsl(var(--rock-1) / .16) 0%, hsl(220 60% 20% / .20) 100%),
+    radial-gradient(ellipse at 50% 0%, hsl(var(--rock-1) / .30), transparent 55%),
+    repeating-linear-gradient(90deg, hsl(0 0% 100% / .035) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(0deg, hsl(0 0% 0% / .20) 0 2px, transparent 2px 5px);
+  background-attachment: fixed;
+}
+.theme-rock .accent { color: hsl(var(--rock-1)); }
+.theme-rock .gradient-text {
+  background: var(--gradient-rock);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.stencil-text {
+  color: hsl(var(--rock-2));
+  text-shadow:
+    3px 3px 0 hsl(var(--rock-1)),
+    6px 6px 0 hsl(0 0% 0%);
+}
