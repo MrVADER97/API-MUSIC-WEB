@@ -99,15 +99,15 @@
     //  2) iTunes resuelve cada uno para conseguir previewUrl + artwork.
     //  3) Si MusicBrainz falla o no hay matches, fallback a búsqueda directa en iTunes.
     const fetcher = g.mbTag
-      ? window.SonidoAPI.tracksByMbTagWithPreviews(g.mbTag, 9, 30, 4)
+      ? window.SonidoAPI.tracksByMbTagWithPreviews(g.mbTag, 12, 30, 4)
           .then((tracks) => {
             if (tracks && tracks.length) return tracks;
             // Fallback si MusicBrainz no rinde resultados utilizables
             return (g.genreNames && g.genreNames.length)
-              ? window.SonidoAPI.tracksByTermFilteredByGenre(g.searchTerm, g.genreNames, 9)
-              : window.SonidoAPI.tracksByGenre(g.searchTerm, 9);
+              ? window.SonidoAPI.tracksByTermFilteredByGenre(g.searchTerm, g.genreNames, 12)
+              : window.SonidoAPI.tracksByGenre(g.searchTerm, 12);
           })
-      : window.SonidoAPI.tracksByGenre(g.searchTerm, 9);
+      : window.SonidoAPI.tracksByGenre(g.searchTerm, 12);
     fetcher
       .then((tracks) => {
         if (!tracks.length) { wrap.innerHTML = window.SonidoRender.empty(); return; }
