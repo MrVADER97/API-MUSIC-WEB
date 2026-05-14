@@ -134,7 +134,37 @@ img { max-width: 100%; display: block; }
   font-size: .7rem; letter-spacing: .35em; text-transform: uppercase;
   color: hsl(var(--muted-foreground));
 }
-
+/* Offcanvas móvil */
+.offcanvas {
+  position: fixed !important;
+  inset: 0 !important;
+  width: min(100%, 420px) !important;
+  max-width: 100% !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  overflow: hidden !important;
+  z-index: 2100 !important;
+}
+.offcanvas-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2090 !important;
+}
+.offcanvas-end {
+  right: 0 !important;
+}
+.offcanvas.show {
+  transform: none !important;
+}
+.offcanvas .offcanvas-body {
+  height: calc(100vh - 4.5rem) !important;
+  min-height: calc(100vh - 4.5rem) !important;
+  overflow-y: auto !important;
+  padding-bottom: env(safe-area-inset-bottom, 1rem);
+}
+.offcanvas .offcanvas-content {
+  height: 100% !important;
+}
 /* Botones SONIDO */
 .btn-sonido {
   display: inline-flex; align-items: center; gap: .75rem;
@@ -302,28 +332,95 @@ img { max-width: 100%; display: block; }
 /* Track de iTunes */
 .track-card {
   background: hsl(var(--card) / .5); border: 1px solid hsl(var(--border));
-  padding: 1rem; transition: transform .3s, border-color .3s;
-  display: flex; flex-direction: column; gap: .85rem; height: 100%;
+  padding: 0; transition: transform .3s, border-color .3s;
+  aspect-ratio: 1; /* Cuadrado */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .track-card:hover { transform: translateY(-2px); border-color: hsl(var(--primary)); }
-.track-card .top { display: flex; gap: .85rem; align-items: center; }
-.track-card img {
-  width: 64px; height: 64px; object-fit: cover; border-radius: 2px; flex-shrink: 0;
+.track-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.7) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: white;
 }
-.track-card .meta { flex: 1; min-width: 0; }
-.track-card .meta h4 {
-  font-family: 'Playfair Display', serif; font-size: 1.05rem; line-height: 1.25;
-  margin: 0 0 .35rem 0;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+.track-meta {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
+}
+.track-meta h4 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  margin: 0 0 0.5rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.track-card .meta p {
-  font-family: 'JetBrains Mono', monospace; font-size: .65rem;
-  letter-spacing: .2em; text-transform: uppercase;
-  color: hsl(var(--muted-foreground)); margin: 0;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+.track-meta p {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.9;
 }
-.track-card audio { width: 100%; margin-top: auto; }
+.genre-play {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px);
+}
+.genre-play:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.3);
+}
+.genre-play.is-playing::before {
+  content: "⏸";
+}
+.genre-play:not(.is-playing)::before {
+  content: "▶";
+}
+.genre-play.is-loading::before {
+  content: "⏳";
+}
+.no-preview {
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+}
 
 /* Footer */
 .footer-sonido {

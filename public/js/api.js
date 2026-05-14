@@ -156,20 +156,17 @@ window.SonidoAPI = (function () {
    ================================================================ */
 window.SonidoRender = {
   trackCard(t) {
-    const img = (t.artworkUrl100 || "").replace("100x100", "200x200");
-    const audio = t.previewUrl
-      ? `<audio controls preload="none" src="${t.previewUrl}"></audio>`
-      : `<span class="text-muted" style="font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.2em;">SIN PREVIEW</span>`;
+    const img = (t.artworkUrl100 || "").replace("100x100", "400x400");
+    const hasPreview = !!t.previewUrl;
     return `
-      <article class="track-card">
-        <div class="top">
-          <img src="${img}" alt="Portada de ${escapeHtml(t.collectionName || t.trackName || "")}" loading="lazy" />
-          <div class="meta">
+      <article class="track-card" style="background-image: url('${img}');">
+        <div class="track-overlay">
+          <div class="track-meta">
             <h4>${escapeHtml(t.trackName || t.collectionName || "Sin título")}</h4>
-            <p>${escapeHtml(t.artistName || "—")} · ${escapeHtml((t.primaryGenreName || ""))}</p>
+            <p>${escapeHtml(t.artistName || "—")}</p>
           </div>
+          ${hasPreview ? `<button class="genre-play" data-preview="${t.previewUrl}" aria-label="Reproducir ${escapeHtml(t.trackName || '')}"></button>` : `<span class="no-preview">SIN PREVIEW</span>`}
         </div>
-        ${audio}
       </article>`;
   },
   loader() {
