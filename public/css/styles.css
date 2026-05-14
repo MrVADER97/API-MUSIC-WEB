@@ -135,35 +135,40 @@ img { max-width: 100%; display: block; }
   color: hsl(var(--muted-foreground));
 }
 /* Offcanvas móvil */
-.offcanvas {
-  position: fixed !important;
-  inset: 0 !important;
-  width: min(100%, 420px) !important;
-  max-width: 100% !important;
-  height: 100vh !important;
-  min-height: 100vh !important;
-  overflow: hidden !important;
-  z-index: 2100 !important;
-}
-.offcanvas-backdrop {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 2090 !important;
-}
-.offcanvas-end {
-  right: 0 !important;
-}
-.offcanvas.show {
-  transform: none !important;
-}
-.offcanvas .offcanvas-body {
-  height: calc(100vh - 4.5rem) !important;
-  min-height: calc(100vh - 4.5rem) !important;
-  overflow-y: auto !important;
-  padding-bottom: env(safe-area-inset-bottom, 1rem);
-}
-.offcanvas .offcanvas-content {
-  height: 100% !important;
+@media (max-width: 991.98px) {
+  .navbar-sonido .offcanvas {
+    position: fixed !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: auto !important;
+    width: min(100%, 420px) !important;
+    max-width: 100% !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    overflow: hidden !important;
+    z-index: 2100 !important;
+  }
+  .navbar-sonido .offcanvas-backdrop {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2090 !important;
+  }
+  .navbar-sonido .offcanvas-end {
+    right: 0 !important;
+  }
+  .navbar-sonido .offcanvas.show {
+    transform: none !important;
+  }
+  .navbar-sonido .offcanvas .offcanvas-body {
+    height: calc(100vh - 4.5rem) !important;
+    min-height: calc(100vh - 4.5rem) !important;
+    overflow-y: auto !important;
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+  .navbar-sonido .offcanvas .offcanvas-content {
+    height: 100% !important;
+  }
 }
 /* Botones SONIDO */
 .btn-sonido {
