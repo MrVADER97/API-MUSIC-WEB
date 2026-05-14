@@ -97,11 +97,11 @@ img { max-width: 100%; display: block; }
 }
 
 /* Fuentes por género (utilizables en cualquier elemento) */
-.font-hiphop     { font-family: 'Permanent Marker', cursive; }
-.font-jazz       { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-.font-flamenco   { font-family: 'Abril Fatface', serif; }
+.font-hiphop     { font-family: 'Sedgwick Ave Display', cursive;  }
+.font-jazz       {font-family: 'Limelight', serif; }
+.font-flamenco   { font-family: 'Cormorant Garamond', serif; }
 .font-pop        { font-family: 'Bungee Shade', cursive; }
-.font-rock       { font-family: 'UnifrakturCook', serif; }
+.font-rock       { font-family: 'New Rocker', normal; }
 
 /* ===== Componentes propios ===== */
 
@@ -453,11 +453,11 @@ section.section { padding: 6rem 0; position: relative; overflow: hidden; }
   line-height: .82; margin: 0; text-transform: uppercase;
   background-clip: text; -webkit-background-clip: text; color: transparent;
 }
-.gs-hiphop   .gs-title { background-image: var(--gradient-hiphop); }
-.gs-jazz     .gs-title { background-image: var(--gradient-jazz); }
-.gs-flamenco .gs-title { background-image: var(--gradient-flamenco); }
-.gs-pop      .gs-title { background-image: var(--gradient-pop); }
-.gs-rock     .gs-title { background-image: var(--gradient-rock); }
+.gs-hiphop   .gs-title { font-family: 'Sedgwick Ave Display', cursive; background-image: var(--gradient-hiphop); }
+.gs-jazz     .gs-title { font-family: 'Limelight', serif; background-image: var(--gradient-jazz); }
+.gs-flamenco .gs-title { font-family: 'Abril Fatface', cursive; background-image: var(--gradient-flamenco); }
+.gs-pop      .gs-title { font-family: 'Bungee Shade', cursive; background-image: var(--gradient-pop); }
+.gs-rock     .gs-title { font-family: 'New Rocker', cursive; background-image: var(--gradient-rock); }
 
 .gs-tagline {
   font-family: 'Playfair Display', serif; font-style: italic;

@@ -20,11 +20,22 @@
   font-size: clamp(3.5rem, 10vw, 10rem);
   line-height: 1.2;
 }
+.gs-hiphop .gs-title {
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  line-height: 1.2;
+}
 .theme-hiphop h1,
 .theme-hiphop h2,
 .theme-hiphop h3 {
   font-family: 'Sedgwick Ave Display', cursive;
   /* Fuente para títulos */
+}
+
+.theme-hiphop .navbar-sonido .nav-link,
+.theme-hiphop .navbar-brand,
+.theme-hiphop .brand-mono,
+.theme-hiphop .section-title {
+  font-family: 'Sedgwick Ave Display', cursive;
 }
 
 .theme-hiphop .accent {
@@ -44,6 +55,11 @@
   text-shadow: 6px 6px 0 hsl(0 0% 0% / .55);
 }
 
+/* Estilos para enlaces de género en index.html */
+a.genre-hiphop {
+  font-family: 'Sedgwick Ave Display', cursive;
+}
+
 /* JAZZ */
 .theme-jazz {
   background-color: hsl(var(--jazz-bg));
@@ -61,6 +77,17 @@
 .theme-jazz h3 {
   font-family: 'Limelight';
   /* Fuente para títulos */
+}
+.gs-jazz .gs-title {
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  line-height: 1.2;
+}
+
+.theme-jazz .navbar-sonido .nav-link,
+.theme-jazz .navbar-brand,
+.theme-jazz .brand-mono,
+.theme-jazz .section-title {
+  font-family: 'Limelight', serif;
 }
 
 .theme-jazz .accent {
@@ -100,6 +127,17 @@
   font-family: 'Abril Fatface', cursive;
   /* Fuente para títulos */
 }
+.gs-flamenco .gs-title {
+  font-size: clamp(3.5rem, 10vw, 9rem);
+  line-height: 1.2;
+}
+
+.theme-flamenco .navbar-sonido .nav-link,
+.theme-flamenco .navbar-brand,
+.theme-flamenco .brand-mono,
+.theme-flamenco .section-title {
+  font-family: 'Abril Fatface', cursive;
+}
 
 .theme-flamenco .accent {
   color: hsl(var(--flamenco-1));
@@ -129,11 +167,22 @@
   font-size: clamp(3.5rem, 10vw, 10rem);
   line-height: 1;
 }
+.gs-pop .gs-title {
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  line-height: 1;
+}
 .theme-pop h1,
 .theme-pop h2,
 .theme-pop h3 {
   font-family: 'Bungee Shade', cursive;
   /* Fuente para títulos */
+}
+
+.theme-pop .navbar-sonido .nav-link,
+.theme-pop .navbar-brand,
+.theme-pop .brand-mono,
+.theme-pop .section-title {
+  font-family: 'Bungee Shade', cursive;
 }
 
 .theme-pop .accent {
@@ -172,8 +221,19 @@
 .theme-rock h1,
 .theme-rock h2,
 .theme-rock h3 {
-  font-family: 'New Rocker', normal;
+  font-family: 'New Rocker', cursive;
   /* Fuente para títulos */
+}
+.gs-rock .gs-title {
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  line-height: 1.2;
+}
+
+.theme-rock .navbar-sonido .nav-link,
+.theme-rock .navbar-brand,
+.theme-rock .brand-mono,
+.theme-rock .section-title {
+  font-family: 'New Rocker', cursive;
 }
 
 .theme-rock .accent {
@@ -193,3 +253,12 @@
     3px 3px 0 hsl(var(--rock-1)),
     6px 6px 0 hsl(0 0% 0%);
 }
+
+/* ================================================================
+   GÉNERO LINKS (para index.html marquee)
+   ================================================================ */
+a.genre-hiphop { font-family: 'Sedgwick Ave Display', cursive; }
+a.genre-jazz { font-family: 'Limelight', serif; }
+a.genre-flamenco { font-family: 'Cormorant Garamond', serif; }
+a.genre-pop { font-family: 'Bungee Shade', cursive; } 
+a.genre-rock { font-family: 'New Rocker', normal; }
