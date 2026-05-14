@@ -227,6 +227,7 @@
           if (!res) { out.innerHTML = window.SonidoRender.empty("No encontramos nada esta vez."); return; }
           if (title) title.textContent = labels[res.genre] ? labels[res.genre].name.toUpperCase() : res.genre.toUpperCase();
           out.innerHTML = window.SonidoRender.trackCard(res.track);
+          initGenrePlayer(out);
         })
         .catch((err) => {
           console.error(err);
@@ -342,6 +343,47 @@
           delay: .15
         });
       }
+    });
+  }
+
+  // Función compartida para inicializar reproductor de botones en contenedores
+  function initGenrePlayer(container) {
+    const audio = document.createElement("audio");
+    audio.preload = "none";
+    audio.setAttribute("aria-hidden", "true");
+    document.body.appendChild(audio);
+
+    let activeBtn = null;
+
+    function clearActive() {
+      if (activeBtn) {
+        activeBtn.classList.remove("is-playing", "is-loading");
+        activeBtn = null;
+      }
+    }
+
+    audio.addEventListener("play",  () => activeBtn && activeBtn.classList.add("is-playing"));
+    audio.addEventListener("pause", () => activeBtn && activeBtn.classList.remove("is-playing"));
+    audio.addEventListener("ended", () => clearActive());
+
+    container.addEventListener("click", function (e) {
+      const btn = e.target.closest(".genre-play");
+      if (!btn) return;
+      e.preventDefault();
+
+      // Toggle si es la misma pista
+      if (activeBtn === btn) {
+        if (audio.paused) audio.play().catch(() => {});
+        else audio.pause();
+        return;
+      }
+
+      clearActive();
+      activeBtn = btn;
+      const url = btn.dataset.preview;
+      if (!url) return;
+      audio.src = url;
+      audio.play().catch(() => {});
     });
   }
 })();

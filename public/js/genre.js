@@ -112,21 +112,55 @@
       .then((tracks) => {
         if (!tracks.length) { wrap.innerHTML = window.SonidoRender.empty(); return; }
         wrap.innerHTML = tracks
-          .map((t) => `<div class="col-12 col-md-6 col-xl-4">${window.SonidoRender.trackCard(t)}</div>`)
+          .map((t) => `<div class="col-12 col-sm-6 col-md-4 col-xl-3">${window.SonidoRender.trackCard(t)}</div>`)
           .join("");
-        // Solo un reproductor activo a la vez
-        wrap.querySelectorAll("audio").forEach((audio) => {
-          audio.addEventListener("play", () => {
-            wrap.querySelectorAll("audio").forEach((other) => {
-              if (other !== audio) other.pause();
-            });
-          });
-        });
+        // Inicializar reproductor para botones
+        initGenrePlayer(wrap);
       })
       .catch((err) => {
         console.error(err);
         wrap.innerHTML = window.SonidoRender.error();
       });
+  }
+
+  function initGenrePlayer(container) {
+    const audio = document.createElement("audio");
+    audio.preload = "none";
+    audio.setAttribute("aria-hidden", "true");
+    document.body.appendChild(audio);
+
+    let activeBtn = null;
+
+    function clearActive() {
+      if (activeBtn) {
+        activeBtn.classList.remove("is-playing", "is-loading");
+        activeBtn = null;
+      }
+    }
+
+    audio.addEventListener("play",  () => activeBtn && activeBtn.classList.add("is-playing"));
+    audio.addEventListener("pause", () => activeBtn && activeBtn.classList.remove("is-playing"));
+    audio.addEventListener("ended", () => clearActive());
+
+    container.addEventListener("click", function (e) {
+      const btn = e.target.closest(".genre-play");
+      if (!btn) return;
+      e.preventDefault();
+
+      // Toggle si es la misma pista
+      if (activeBtn === btn) {
+        if (audio.paused) audio.play().catch(() => {});
+        else audio.pause();
+        return;
+      }
+
+      clearActive();
+      activeBtn = btn;
+      const url = btn.dataset.preview;
+      if (!url) return;
+      audio.src = url;
+      audio.play().catch(() => {});
+    });
   }
 
   function markActiveNav(id) {
