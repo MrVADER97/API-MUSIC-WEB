@@ -13,12 +13,31 @@
     radial-gradient(circle at 80% 75%, hsl(0 80% 40% / .26), transparent 50%),
     repeating-linear-gradient(45deg, hsl(0 0% 100% / .035) 0 2px, transparent 2px 14px);
   background-attachment: fixed;
+  font-family: 'Sedgwick Ave Display', sans-serif;
+  /* Fuente para textos generales */
 }
-.theme-hiphop .accent { color: hsl(var(--hiphop-1)); }
+.theme-hiphop .section-title {
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  line-height: 1.2;
+}
+.theme-hiphop h1,
+.theme-hiphop h2,
+.theme-hiphop h3 {
+  font-family: 'Sedgwick Ave Display', cursive;
+  /* Fuente para títulos */
+}
+
+.theme-hiphop .accent {
+  color: hsl(var(--hiphop-1));
+}
+
 .theme-hiphop .gradient-text {
   background: var(--gradient-hiphop);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+
 .tag-stroke {
   -webkit-text-stroke: 2px hsl(0 0% 100%);
   color: hsl(var(--hiphop-1) / .25);
@@ -33,16 +52,32 @@
     radial-gradient(ellipse at top, hsl(var(--jazz-1) / .28), transparent 55%),
     radial-gradient(ellipse at 80% 90%, hsl(280 70% 40% / .30), transparent 50%);
   background-attachment: fixed;
+  font-family: 'Limelight', serif;
+  /* Fuente para textos generales */
 }
-.theme-jazz .accent { color: hsl(var(--jazz-1)); }
+
+.theme-jazz h1,
+.theme-jazz h2,
+.theme-jazz h3 {
+  font-family: 'Limelight';
+  /* Fuente para títulos */
+}
+
+.theme-jazz .accent {
+  color: hsl(var(--jazz-1));
+}
+
 .theme-jazz .gradient-text {
   background: var(--gradient-jazz);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+
 .deco-frame {
   border: 1px solid hsl(var(--jazz-1) / .6);
   box-shadow: inset 0 0 0 4px hsl(var(--jazz-bg)),
-              inset 0 0 0 5px hsl(var(--jazz-1) / .4);
+    inset 0 0 0 5px hsl(var(--jazz-1) / .4);
 }
 
 /* FLAMENCO */
@@ -55,11 +90,26 @@
     radial-gradient(hsl(36 50% 85% / .10) 1px, transparent 1.5px);
   background-size: auto, auto, auto, 28px 28px;
   background-attachment: fixed;
+  font-family: 'Cormorant Garamond', serif;
+  /* Fuente para textos generales */
 }
-.theme-flamenco .accent { color: hsl(var(--flamenco-1)); }
+
+.theme-flamenco h1,
+.theme-flamenco h2,
+.theme-flamenco h3 {
+  font-family: 'Abril Fatface', cursive;
+  /* Fuente para títulos */
+}
+
+.theme-flamenco .accent {
+  color: hsl(var(--flamenco-1));
+}
+
 .theme-flamenco .gradient-text {
   background: var(--gradient-flamenco);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* POP */
@@ -72,17 +122,38 @@
     radial-gradient(hsl(var(--pop-1) / .16) 1.5px, transparent 2px);
   background-size: auto, auto, auto, 14px 14px;
   background-attachment: fixed;
+  font-family: 'Space Grotesk', sans-serif;
+  /* Fuente para textos generales */
 }
-.theme-pop .accent { color: hsl(var(--pop-1)); }
+.theme-pop .section-title {
+  font-size: clamp(3.5rem, 10vw, 10rem);
+  line-height: 1;
+}
+.theme-pop h1,
+.theme-pop h2,
+.theme-pop h3 {
+  font-family: 'Bungee Shade', cursive;
+  /* Fuente para títulos */
+}
+
+.theme-pop .accent {
+  color: hsl(var(--pop-1));
+}
+
 .theme-pop .gradient-text {
   background: var(--gradient-pop);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+
 .chrome-text {
   background: linear-gradient(180deg,
-    hsl(var(--pop-2)) 0%, hsl(40 30% 96%) 45%,
-    hsl(var(--pop-1)) 55%, hsl(280 90% 65%) 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+      hsl(var(--pop-2)) 0%, hsl(40 30% 96%) 45%,
+      hsl(var(--pop-1)) 55%, hsl(280 90% 65%) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 /* ROCK */
@@ -94,12 +165,28 @@
     repeating-linear-gradient(90deg, hsl(0 0% 100% / .035) 0 1px, transparent 1px 3px),
     repeating-linear-gradient(0deg, hsl(0 0% 0% / .20) 0 2px, transparent 2px 5px);
   background-attachment: fixed;
+  font-family: 'JetBrains Mono', monospace;
+  /* Fuente para textos generales */
 }
-.theme-rock .accent { color: hsl(var(--rock-1)); }
+
+.theme-rock h1,
+.theme-rock h2,
+.theme-rock h3 {
+  font-family: 'New Rocker', normal;
+  /* Fuente para títulos */
+}
+
+.theme-rock .accent {
+  color: hsl(var(--rock-1));
+}
+
 .theme-rock .gradient-text {
   background: var(--gradient-rock);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
+
 .stencil-text {
   color: hsl(var(--rock-2));
   text-shadow:
