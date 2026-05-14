@@ -278,7 +278,7 @@
                 <p class="gs-tagline">${escapeHtml(g.tagline)}</p>
               </div>
               <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-                <a href="/pages/${g.id}.html" class="btn-ghost-sonido">Ver género →</a>
+                <a href="pages/${g.id}.html" class="btn-ghost-sonido">Ver género →</a>
               </div>
             </div>
             <div class="row g-5 mt-2">
@@ -288,7 +288,7 @@
               </div>
             </div>
             <div class="text-center mt-5">
-              <a href="/pages/${g.id}.html" class="btn-sonido">
+              <a href="pages/${g.id}.html" class="btn-sonido">
                 <span>Explorar ${escapeHtml(g.name)} →</span>
               </a>
             </div>
